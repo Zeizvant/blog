@@ -1,6 +1,7 @@
 <x-navbar>
     <div class='px-8 max-w-7xl m-auto mt-10'>
-        <form>
+        <form action='{{ route("quiz.store") }}' method='POST' enctype="multipart/form-data">
+        @csrf
             <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">
                 <h2 class="text-base font-semibold leading-7 text-gray-900">Add Quiz</h2>

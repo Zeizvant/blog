@@ -28,3 +28,4 @@ Route::post('/login',  [LoginController::class, 'login'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/add-quiz', [QuizController::class, 'show'])->name('quiz.add')->middleware('auth');
 Route::get('/add-question',[QuestionController::class, 'show'])->name('question.add')->middleware('auth');
+Route::post('/add-quiz', [QuizController::class, 'store'])->name('quiz.store')->middleware('auth');
