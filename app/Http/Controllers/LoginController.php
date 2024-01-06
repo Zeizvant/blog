@@ -15,6 +15,8 @@ class LoginController extends Controller
     public function login(LoginRequest $request){
         if(Auth::attempt($request->validated())){
             return redirect()->route('index');
+        }else{
+            return redirect()->route('login.view');
         }
     }
 

@@ -12,10 +12,13 @@
     <body>
         <nav class="bg-gray-800">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                <div class="relative flex h-16 items-center justify-end">
+                <div class="relative flex h-16 items-center justify-between">
                 @if(auth()->user())
-                <div class='text-gray-300 mx-4'>{{ auth()->user()->email }}</div>
-                <a href="{{ route('logout') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Logout</a>
+                <a href="{{ route('index') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</a>
+                <div class='flex items-center'>
+                    <div class='text-gray-300 mx-4'>{{ auth()->user()->email }}</div>
+                    <a href="{{ route('logout') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Logout</a>
+                </div>
                 @else
                 <div class="flex space-x-4">
                     @if (request()->route()->getName() == 'login.view')
