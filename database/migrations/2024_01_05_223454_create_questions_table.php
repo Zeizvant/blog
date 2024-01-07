@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('question');
             $table->string('correct');
-            $table->string('answers');
+            $table->json('answers');
             $table->integer('position');
             $table->string('thumbnail')->nullable();
             $table->foreignId('quiz_id')->constrained()->cascadeOnDelete();
