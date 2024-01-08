@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,4 @@ Route::get('/toggle/quiz/{id}', [QuizController::class, 'toggle'])->name('quiz.t
 Route::get('/quiz/delete/{id}', [QuizController::class, 'delete'])->name('quiz.delete')->middleware('auth');
 Route::get('/edit-quiz/{id}', [QuizController::class, 'edit'])->name('quiz.edit')->middleware('auth');
 Route::post('/edit-quiz/{id}', [QuizController::class, 'update'])->name('quiz.update')->middleware('auth');
+Route::get('/dashboard', [UserController::class, 'show'])->name('dashboard')->middleware('auth');
