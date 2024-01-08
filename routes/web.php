@@ -29,3 +29,6 @@ Route::post('/add-quiz', [QuizController::class, 'store'])->name('quiz.store')->
 Route::post('/add-question', [QuestionController::class, 'store'])->name('question.store')->middleware('auth');
 Route::get('/quiz/{id}', [QuizController::class, 'info'])->name('quiz.info')->middleware('auth');
 Route::get('/toggle/quiz/{id}', [QuizController::class, 'toggle'])->name('quiz.toggle')->middleware('auth');
+Route::get('/quiz/delete/{id}', [QuizController::class, 'delete'])->name('quiz.delete')->middleware('auth');
+Route::get('/edit-quiz/{id}', [QuizController::class, 'edit'])->name('quiz.edit')->middleware('auth');
+Route::post('/edit-quiz/{id}', [QuizController::class, 'update'])->name('quiz.update')->middleware('auth');
