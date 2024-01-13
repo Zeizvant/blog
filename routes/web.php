@@ -34,3 +34,6 @@ Route::get('/quiz/delete/{id}', [QuizController::class, 'delete'])->name('quiz.d
 Route::get('/edit-quiz/{id}', [QuizController::class, 'edit'])->name('quiz.edit')->middleware('auth');
 Route::post('/edit-quiz/{id}', [QuizController::class, 'update'])->name('quiz.update')->middleware('auth');
 Route::get('/dashboard', [UserController::class, 'show'])->name('dashboard')->middleware('auth');
+Route::get('/edit-question/{id}', [QuestionController::class, 'edit'])->name('question.edit')->middleware('auth');
+Route::post('/edit-question/{id}', [QuestionController::class, 'update'])->name('question.update')->middleware('auth');
+Route::get('/question/delete/{id}', [QuestionController::class, 'delete'])->name('question.delete')->middleware('auth');

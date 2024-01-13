@@ -28,7 +28,11 @@
         </div>
         <div class='flex flex-col mt-10 gap-4'>
             @foreach ($questions as $question)
-                <div>{{ $question->question }}</div>
+                <div class='flex gap-4'>
+                    <p>{{ $question->question }}</p>
+                    <a class='underline' href='{{ route("question.edit", ["id" => $question->id]) }}'>edit</a>
+                    <a class='underline' href='{{ route("question.delete", ["id" => $question->id]) }}'>delete</a>
+                </div>
             @endforeach
         </div>
 
